@@ -1,0 +1,157 @@
+/* One centred rectangle on the page's paper. Sharp corners, one hairline.
+   Inside: a way back, then the mail doors in the sheet's own small
+   register — tracked caps, a wave under the word, air instead of a rule. */
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color-scheme: light;
+  caret-color: var(--word);
+  scrollbar-color: var(--hair) var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  font-synthesis: none;
+}
+
+::selection {
+  background: var(--word);
+  color: var(--paper);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6) var(--wp);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--geo);
+  font-size: var(--f-cap);
+  line-height: var(--lh-tight);
+}
+
+.board {
+  width: min(100%, 20rem);
+  padding: var(--sp-6);
+  border: var(--rule) solid var(--hair);
+  border-radius: 0;
+  background: var(--paper);
+}
+
+.back {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 1.875rem;
+  padding: 0.5rem 0;
+  margin: 0 0 var(--sp-2);
+  color: var(--ink-3);
+  text-decoration: none;
+  font-size: var(--f-cap);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: color 120ms ease-out;
+}
+
+.mark {
+  display: block;
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+
+[dir="rtl"] .back .mark {
+  scale: -1 1;
+}
+
+.back:hover,
+.back:focus-visible {
+  color: var(--word);
+}
+
+.back:focus-visible {
+  outline: var(--rule) solid var(--ume);
+  outline-offset: 3px;
+}
+
+/* Same index of doors as the sheet. No per-row rule, no numbers.
+   Padding carries the reach; the two areas sit adjacent and never overlap. */
+.ways {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: var(--f-cap);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.ways a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 1.875rem;
+  padding: 0.5rem 0;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 120ms ease-out;
+}
+
+/* The sheet's own row is 30px. On a coarse pointer the same row has to
+   clear 44px, so the height is raised only there — not drawn as empty
+   bars on a mouse. */
+@media (pointer: coarse) {
+  .back,
+  .ways a {
+    min-height: 2.75rem;
+  }
+}
+
+.ways a:hover,
+.ways a:focus-visible {
+  color: var(--word);
+}
+
+.ways a:focus-visible {
+  outline: var(--rule) solid var(--ume);
+  outline-offset: 3px;
+}
+
+.ways-k {
+  position: relative;
+  display: inline-block;
+}
+
+.ways-k::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0.18em;
+  bottom: -0.6em;
+  height: 5px;
+  background-color: currentColor;
+  opacity: 0.45;
+  -webkit-mask-image: var(--wave);
+  mask-image: var(--wave);
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-size: 36px 5px;
+  mask-size: 36px 5px;
+  transition: opacity 120ms ease-out;
+}
+
+.ways a:hover .ways-k::after,
+.ways a:focus-visible .ways-k::after {
+  opacity: 1;
+}

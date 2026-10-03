@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>lilt story</title>
+    <meta name="description" content="lilt story." />
+    <link rel="icon" href="/public/favicon.svg" />
+    <link rel="preload" href="/public/fonts/jost-400-600-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/public/fonts/jost-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/src/fonts.css" />
+    <link rel="stylesheet" href="/src/tokens.css" />
+    <link rel="stylesheet" href="/src/poster.css" />
+  </head>
+  <body>
+    <!--
+      Copy lives here, in one place, so an English or Spanish pass is an
+      edit of these strings and not a layout rewrite.
+      eyebrow: lilt story · shanghai + weather (placeholder)
+      title:   Elegy for / a Park
+      verse:   The past? If there is no beginning… (Borges, Elegy for a Park)
+      date:    05 July / 2019  (a Friday, which is what the barcode's mark says)
+      issue:   01
+      doors:   github.com/hipness · /contact.html
+      cover:   trains, parks, and the light at dusk (placeholder)
+      weather: wx worker on workers.dev (place, temp, code, isDay)
+      barcode: null (Code 128)
+      weekday: FRIDAY
+    -->
+    <main class="sheet">
+      <!-- The eyebrow. A catalogue mark, the way a specimen sheet is filed. -->
+      <div class="eyebrow">
+        <p class="eyebrow-word">lilt story</p>
+        <p class="eyebrow-place">
+          <span data-wx-place>shanghai</span>
+          <span data-wx-temp hidden></span>
+          <svg class="wx" data-wx viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <circle cx="8" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.2" />
+            <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+              <path d="M8 1.6v1.5M8 12.9v1.5M1.6 8h1.5M12.9 8h1.5M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1" />
+            </g>
+          </svg>
+        </p>
+      </div>
+
+      <!-- The plate. A 4:5 portrait frame. The photograph is cropped to
+           that ratio (`object-fit: cover`); swap the src when a new one arrives. -->
+      <figure class="plate" data-plate>
+        <img class="plate-img" src="/public/plate.jpg" alt="" width="717" height="1280" />
+      </figure>
+
+      <!-- The stack: the title takes the left and the verse answers on the
+           right. They share a top edge. The title is the largest type. -->
+      <div class="stack">
+        <div class="nar">
+          <h1 class="word">Elegy for<br />a Park</h1>
+          <!-- The way out. Two destinations under the title, set in the page's
+               own small register: the tracked, uppercase caps the eyebrow and
+               the colophon already speak. No arrows, no numbers, no pill bar —
+               a contents line for the sheet. The title and this index share
+               the left rail; air, not a hairline, sits between them. -->
+          <nav class="ways" aria-label="index">
+            <a href="https://github.com/hipness">
+              <span class="ways-k">github</span>
+            </a>
+            <a href="/contact.html">
+              <span class="ways-k">contact me</span>
+            </a>
+          </nav>
+        </div>
+        <div class="verse">
+          <p>The past? If there is no beginning and no end, if what there is in store for us is only an infinite sum of white days and black nights, we already are the past that we shall be.</p>
+          <p>We are time, the indivisible river, we are Uxmal, and Carthage, and the broken wall of the Romans, long since worn away, and the lost park these lines commemorate.</p>
+          <!-- The cover line. A supplement to the reading, so it sits under
+               the verse on the same left edge — italic Jost, placeholder. -->
+          <p class="cover-line">trains, parks, and the light at dusk</p>
+        </div>
+      </div>
+
+      <!-- The colophon. Date, small, bottom left. Barcode and weekday
+           stay on the right. A place for the nav lives under the title. -->
+      <footer class="foot">
+        <p class="foot-issue">issue 01</p>
+        <p class="foot-date"><b>05</b> July <span class="foot-year">/ 2019</span></p>
+        <svg class="bar" viewBox="0 0 79 24" aria-label="null" focusable="false">
+            <g fill="var(--ink)">
+              <rect x="0" y="0" width="2" height="24" />
+              <rect x="3" y="0" width="1" height="24" />
+              <rect x="6" y="0" width="1" height="24" />
+              <rect x="11" y="0" width="2" height="24" />
+              <rect x="17" y="0" width="1" height="24" />
+              <rect x="19" y="0" width="1" height="24" />
+              <rect x="22" y="0" width="1" height="24" />
+              <rect x="25" y="0" width="4" height="24" />
+              <rect x="31" y="0" width="1" height="24" />
+              <rect x="33" y="0" width="2" height="24" />
+              <rect x="37" y="0" width="1" height="24" />
+              <rect x="39" y="0" width="1" height="24" />
+              <rect x="44" y="0" width="2" height="24" />
+              <rect x="48" y="0" width="1" height="24" />
+              <rect x="50" y="0" width="1" height="24" />
+              <rect x="55" y="0" width="3" height="24" />
+              <rect x="59" y="0" width="4" height="24" />
+              <rect x="64" y="0" width="1" height="24" />
+              <rect x="66" y="0" width="2" height="24" />
+              <rect x="71" y="0" width="3" height="24" />
+              <rect x="75" y="0" width="1" height="24" />
+              <rect x="77" y="0" width="2" height="24" />
+            </g>
+          </svg>
+          <p class="bar-word"><span>F</span><span>R</span><span>I</span><span>D</span><span>A</span><span>Y</span></p>
+      </footer>
+    </main>
+    <script>
+      // One family of line glyphs, same 1.2 stroke as the sun the sheet ships
+      // with. Keyed by the WMO code the weather worker returns; a night
+      // reading swaps the two clear states for the moon. Anything unrecognised
+      // stays the sun already drawn above.
+      var WX = {
+        "0": '<circle cx="8" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.2"/><g stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M8 1.6v1.5M8 12.9v1.5M1.6 8h1.5M12.9 8h1.5M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1"/></g>',
+        "1": '<circle cx="8" cy="8" r="2.4" fill="none" stroke="currentColor" stroke-width="1.2"/><g stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M8 2.2v1.2M8 12.6v1.2M2.2 8h1.2M12.6 8h1.2M3.9 3.9l.9.9M11.2 11.2l.9.9M3.9 12.1l.9-.9M11.2 4.8l.9-.9"/></g>',
+        "2": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="6.2" cy="6.6" r="2.3"/><path d="M6.2 2.4v1M3.2 3.6l.7.7M2.4 6.6h1M3.2 9.6l.7-.7M9.2 3.6l-.7.7"/><path d="M6.6 11.6h6a2.2 2.2 0 0 0 .3-4.3 3 3 0 0 0-4.6-1.2"/></g>',
+        "3": '<path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="M5 11.4h6.6a2.4 2.4 0 0 0 .4-4.8 3.4 3.4 0 0 0-6.5-.5A2.3 2.3 0 0 0 5 11.4z"/>',
+        "45": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M3 6.2h10M2.4 8.4h11.2M3.4 10.6h9.2M4.6 12.8h6.8"/></g>',
+        "51": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4.4 6.4h7.2a2.3 2.3 0 0 0 .3-4.5A3.2 3.2 0 0 0 5.6 1.6 2.2 2.2 0 0 0 4.4 6.4z"/><path d="M6.2 8.8v3.4M9.6 8.4v4.2"/></g>',
+        "61": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4.2 6.6h7.4a2.3 2.3 0 0 0 .4-4.6A3.3 3.3 0 0 0 5.4 1.7 2.2 2.2 0 0 0 4.2 6.6z"/><path d="M5.6 9v3.6M8 8.4v4.2M10.4 9v3.6"/></g>',
+        "71": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4.2 6.2h7.4a2.3 2.3 0 0 0 .4-4.5A3.3 3.3 0 0 0 5.4 1.4 2.2 2.2 0 0 0 4.2 6.2z"/><path d="M6.4 8.2l-.8 1.6M9.2 8l-.8 1.6M7.2 10.4l-.8 1.6M10 10.2l-.8 1.6"/></g>',
+        "80": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4.2 6h7.4a2.3 2.3 0 0 0 .4-4.5A3.3 3.3 0 0 0 5.4 1.2 2.2 2.2 0 0 0 4.2 6z"/><path d="M6 8.2v2.4M9.4 7.8v2.8M7.4 11.6l.5 1.4M8.6 11.2l-.6 1.6"/></g>',
+        "95": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M5.6 6.4h6.2a2 2 0 0 0 .3-4 2.9 2.9 0 0 0-5.4-.3A1.9 1.9 0 0 0 5.6 6.4z"/><path d="M7.2 3.2l-.6 2.2h2.2l-.7 2.4"/></g>',
+        "moon": '<path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="M10.4 11.2A4.6 4.6 0 0 1 4.6 3.6a4.8 4.8 0 1 0 5.8 7.6z"/>',
+        "mooncloud": '<g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M11.6 9.4A4.2 4.2 0 0 1 6.6 3.2 4.4 4.4 0 1 0 11.6 9.4z"/><path d="M3.4 12.4h3.2M4 13.8h2"/></g>'
+      };
+
+      // WMO weather codes collapse onto the glyphs above. Ranges, not a
+      // 1:1 table: 45 and 48 are both fog, 51–57 all drizzle, and so on.
+      function wxKey(code, isDay) {
+        if (code === 0 || code === 1) return isDay ? String(code) : "moon";
+        if (code === 2) return isDay ? "2" : "mooncloud";
+        if (code === 3) return "3";
+        if (code === 45 || code === 48) return "45";
+        if (code >= 51 && code <= 57) return "51";
+        if ((code >= 61 && code <= 67) || code === 82) return "61";
+        if ((code >= 71 && code <= 77) || code === 85 || code === 86) return "71";
+        if (code === 80 || code === 81) return "80";
+        if (code >= 95) return "95";
+        return "0";
+      }
+
+      (function () {
+        var icon = document.querySelector("[data-wx]");
+        var place = document.querySelector("[data-wx-place]");
+        var temp = document.querySelector("[data-wx-temp]");
+        if (!icon) return;
+        fetch("https://wx.lilt.workers.dev/shanghai")
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            if (!d || typeof d.code !== "number") return;
+            var glyph = WX[wxKey(d.code, d.isDay)];
+            if (glyph) icon.innerHTML = glyph;
+            if (place && d.place) place.textContent = d.place;
+            if (temp && typeof d.temp === "number") {
+              temp.textContent = Math.round(d.temp) + "°";
+              temp.hidden = false;
+            }
+          })
+          .catch(function () {});
+      })();
+    </script>
+  </body>
+</html>

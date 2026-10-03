@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light;
+
+  /* One surface. The page is a sheet of paper; the plate is a photograph laid
+     on it. Nothing on this sheet has a background but the paper and the
+     photograph itself. */
+  --paper: #ffffff;
+
+  /* The ink ladder, three steps and one hue.
+     --ink   the marks: the barcode and the weekday beside it.
+     --ink-2 the words a reader reads or acts on: the index, the cover line,
+             the verse, and the day number that anchors the date.
+     --ink-3 the apparatus around them: the masthead, the issue, the date.
+     --word  the title, and the only thing on the sheet set in a colour —
+             a dark forest green measured off the reference as rgb(15, 57, 42),
+             not black and not the brighter wordmark green.
+     --ume   the focus ring and the selection, and nothing else. */
+  --ink: #141414;
+  --ink-2: #363636;
+  --ink-3: #6b6b6b;
+  --ume: #00734e;
+  --word: #0f392a;
+
+  --wp: 1.25rem;
+
+  /* One gutter, one ladder. The sheet is two equal columns; every block
+     either spans both or sits in one of them. Space grows as the relation
+     between two blocks weakens: 16 inside a group, 24 between the title and
+     its index, 32 before the colophon. */
+  --gutter: 1.25rem;
+  --sp-2: 0.5rem;
+  --sp-4: 1rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+
+  --rule: 1px;
+
+  /* One type family: Jost, self-hosted so nothing depends on a third party.
+     600 carries the title and the day number; 500 carries every label; 400
+     carries the verse and the cover line.
+     The sheet has two voices. The apparatus is caps — masthead, index, issue,
+     weekday — and every label is tracked out at 0.18em, while the data beside
+     them (the issue number and the date) keeps its tracking tight. Everything
+     a reader reads is lowercase. */
+  --geo: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --f-word: 2rem;
+  --f-meta: 0.75rem;
+  --f-prose: 0.75rem;
+  --f-cap: 0.5625rem;
+
+  --hair: oklch(0 0 0 / 0.14);
+
+  /* The mark under a word that opens something: a hand-drawn wave. The tile
+     is 36px and deliberately uneven — four humps of different height on a
+     drifting baseline — so the repeat does not read as a CSS underline. It
+     is worn as a mask rather than a file so its colour stays a token: at
+     rest the word's own grey, under the cursor the title's green. */
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='5'%3E%3Cpath d='M0 3C2 .9 4 4.4 6 2.8S10 .6 13 3.2 17 4.5 20 2.6 24 .7 27 3.1 31 4.3 34 2.7' fill='none' stroke='%23000' stroke-width='1.15' stroke-linecap='round'/%3E%3C/svg%3E");
+
+  --lh-tight: 1;
+  --lh-prose: 1.45;
+
+  /* The plate is a portrait frame — 4:5. Taller than it is wide. */
+  --plate-r: 4 / 5;
+
+  /* The barcode is a mark of its own width, not a fill. Code 128 of `null`
+     is 79 modules; this is enough to read as bars without stretching
+     across the right column. */
+  --bar-w: 5.75rem;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --wp: 1rem;
+    --gutter: 1rem;
+    --f-word: 1.75rem;
+    --f-prose: 0.6875rem;
+  }
+}
